@@ -110,35 +110,6 @@ const Hero = () => {
 
       {/* Creative floating icons - Reduced and repositioned */}
       <div className="absolute inset-0 hidden lg:block">
-        <motion.div
-          className="absolute top-[15%] left-[12%] z-20"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: [0, 0.7, 0.4, 0.7],
-            scale: [0, 1.2, 0.8, 1],
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 5,
-            delay: 0.8,
-            repeat: Infinity,
-            repeatDelay: 4,
-            ease: "easeInOut",
-          }}
-          whileHover={{
-            scale: 1.4,
-            rotate: 180,
-            transition: { duration: 0.3 }
-          }}
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/20 rounded-full blur-md"></div>
-            <Brush 
-              size={28} 
-              className="relative text-yellow-400 drop-shadow-2xl lg:w-8 lg:h-8 xl:w-10 xl:h-10" 
-            />
-          </div>
-        </motion.div>
 
         <motion.div
           className="absolute bottom-[25%] left-[15%] z-20"
@@ -275,7 +246,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center sm:items-start mb-6 xs:mb-8 sm:mb-12 md:mb-16 lg:mb-20"
             >
               <motion.button
-                className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-full font-semibold text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 hover:shadow-2xl transition-all duration-300 font-body overflow-hidden backdrop-blur-sm border border-white/20"
+                className="group relative w-full sm:w-auto bg-gradient-to-r from-sky-300 via-blue-500 to-blue-800 text-white px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-full font-semibold text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 hover:shadow-2xl transition-all duration-300 font-body overflow-hidden backdrop-blur-sm border border-white/20"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 style={{
@@ -288,79 +259,6 @@ const Hero = () => {
               </motion.button>
               
             </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Art categories with enhanced design - Left aligned with content */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="max-w-7xl mx-auto"
-        >
-          {/* Left aligned with main content */}
-          <div className="max-w-2xl lg:max-w-3xl mx-auto lg:mx-0">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5 text-center">
-              {[
-                { 
-                  name: 'Painting', 
-                  color: 'from-red-500 via-orange-500 to-yellow-500', 
-                  desc: 'Colors & Canvas',
-                  icon: '🎨'
-                },
-                { 
-                  name: 'Sketching', 
-                  color: 'from-blue-500 via-purple-500 to-indigo-500', 
-                  desc: 'Lines & Forms',
-                  icon: '✏️'
-                },
-                { 
-                  name: 'Drawing', 
-                  color: 'from-green-500 via-teal-500 to-cyan-500', 
-                  desc: 'Precision & Detail',
-                  icon: '🖊️'
-                },
-                { 
-                  name: 'Creative Workshop', 
-                  color: 'from-pink-500 via-purple-500 to-violet-500', 
-                  desc: 'Mixed Media Art',
-                  icon: '🎭'
-                },
-              ].map((category, index) => (
-                <motion.div
-                  key={category.name}
-                  className={`group relative bg-gradient-to-br ${category.color} p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 rounded-lg xs:rounded-xl sm:rounded-2xl text-white text-center backdrop-blur-md border border-white/30 overflow-hidden shadow-2xl`}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ delay: index * 0.1, duration: 0.3 }}
-                  style={{
-                    boxShadow: '0 0 40px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4)'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm"></div>
-                  <div className="relative z-10">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 xs:mb-1.5 sm:mb-2 md:mb-3">
-                      {category.icon}
-                    </div>
-                    <h3 
-                      className="font-display text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold mb-0.5 xs:mb-1 sm:mb-1.5"
-                      style={{
-                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.2)'
-                      }}
-                    >
-                      {category.name}
-                    </h3>
-                    <p 
-                      className="font-serif text-xs sm:text-sm md:text-base opacity-90 font-light italic"
-                      style={{
-                        textShadow: '0 1px 4px rgba(0, 0, 0, 0.5)'
-                      }}
-                    >
-                      {category.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>
