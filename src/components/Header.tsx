@@ -156,11 +156,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-purple-100' 
-            : 'bg-white/90 backdrop-blur-lg shadow-md'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent`}
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-22">
@@ -238,7 +234,7 @@ const Header = () => {
                 >
                   <motion.button
                     onClick={() => handleNavClick(item.href, item.name)}
-                    className="relative px-3 xl:px-4 py-2 xl:py-2.5 rounded-xl font-body font-medium text-sm xl:text-base text-gray-700 hover:text-white transition-all duration-300 overflow-hidden group cursor-pointer"
+                    className="relative px-3 xl:px-4 py-2 xl:py-2.5 rounded-xl font-body font-medium text-sm xl:text-base text-white hover:text-white transition-all duration-300 overflow-hidden group cursor-pointer"
                     whileHover={{ scale: 1.05, y: -1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -302,7 +298,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden relative p-2 sm:p-2.5 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 cursor-pointer"
+              className="lg:hidden relative p-2 sm:p-2.5 rounded-xl bg-transparent hover:bg-white/10 transition-all duration-300 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -316,7 +312,7 @@ const Header = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X size={20} className="text-purple-600" />
+                    <X size={20} className="text-white" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -326,7 +322,7 @@ const Header = () => {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu size={20} className="text-purple-600" />
+                    <Menu size={20} className="text-white" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -350,7 +346,7 @@ const Header = () => {
             
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-16 sm:top-18 md:top-20 lg:top-22 left-3 right-3 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-purple-100 z-50 lg:hidden overflow-hidden"
+              className="fixed top-16 sm:top-18 md:top-20 lg:top-22 left-3 right-3 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl z-50 lg:hidden overflow-hidden"
               initial={{ opacity: 0, y: -30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -30, scale: 0.95 }}
