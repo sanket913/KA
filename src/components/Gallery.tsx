@@ -99,7 +99,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigateToGallery }) => {
         >
           <motion.button
             onClick={onNavigateToGallery}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 rounded-full font-semibold text-sm xs:text-base sm:text-lg md:text-xl hover:shadow-lg transition-all font-body"
+            className="bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 rounded-full font-semibold text-sm xs:text-base sm:text-lg md:text-xl hover:shadow-lg transition-all font-body"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
