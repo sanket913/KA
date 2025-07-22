@@ -24,10 +24,7 @@ const Hero = () => {
             }}
           />
         </div>
-        {/* Enhanced overlays for better text readability - Reduced opacity to keep image clear */}
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-purple-800/15 to-pink-900/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
+       
       </div>
 
       {/* Animated background particles */}
@@ -208,34 +205,16 @@ const Hero = () => {
               }}
             >
               At{' '}
-              <span 
-                className="font-script text-yellow-300 font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
-                style={{
-                  textShadow: '0 0 15px rgba(253, 224, 71, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8)'
-                }}
-              >
                 Kalakar Art Academy ,
-              </span>
               <br className="hidden sm:block" />
               Discover the world of{' '}
-              <span 
-                className="text-yellow-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(253, 224, 71, 0.5)' }}
-              >
                 Sketching
-              </span>,{' '}
-              <span 
-                className="text-pink-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(249, 168, 212, 0.5)' }}
-              >
+              ,{' '}
+              
                 Drawing
-              </span>, and{' '}
-              <span 
-                className="text-blue-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(147, 197, 253, 0.5)' }}
-              >
+              , and{' '}
+              
                 Painting
-              </span>
             </motion.p>
 
             {/* CTA Buttons */}
