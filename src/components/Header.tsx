@@ -54,35 +54,35 @@ const Header = () => {
       name: 'Home', 
       href: '#home',
       icon: Home,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Welcome to creativity'
     },
     { 
       name: 'About', 
       href: '#about',
       icon: Users,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Our artistic journey'
     },
     { 
       name: 'Courses', 
       href: '#courses',
       icon: Award,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Learn & create'
     },
     { 
       name: 'Gallery', 
       href: '#gallery',
       icon: Palette,
-      color: 'from-orange-500 to-red-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Student masterpieces'
     },
     { 
       name: 'Contact', 
       href: '#contact',
       icon: Phone,
-      color: 'from-indigo-500 to-purple-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Get in touch'
     },
   ];
@@ -159,7 +159,8 @@ const Header = () => {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent`}
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-22">
+          <div className="relative flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-22">
+
             
             {/* Logo */}
             <motion.div 
@@ -223,7 +224,7 @@ const Header = () => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -262,39 +263,36 @@ const Header = () => {
                   </motion.button>
                 </motion.div>
               ))}
-              
-              {/* CTA Button */}
-              <motion.button
-                onClick={handleEnrollClick}
-                className="relative ml-2 xl:ml-4 px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500
- text-white font-semibold text-sm xl:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                whileHover={{ scale: 1.05, y: -1 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                {/* Animated shine effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                  animate={{
-                    x: ['-100%', '100%'],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    ease: "easeInOut",
-                  }}
-                />
-                
-                <div className="relative flex items-center space-x-1.5 cursor-pointer">
-                  <Brush size={16} className="group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="font-body">Enroll Now</span>
-                  <Sparkles size={14} className="group-hover:scale-125 transition-transform duration-300" />
-                </div>
-              </motion.button>
+          
             </nav>
+            <motion.button
+    onClick={handleEnrollClick}
+    className="hidden lg:flex ml-auto px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500
+    text-white font-semibold text-sm xl:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+    whileHover={{ scale: 1.05, y: -1 }}
+    whileTap={{ scale: 0.95 }}
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.6 }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+      animate={{
+        x: ['-100%', '100%'],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatDelay: 3,
+        ease: "easeInOut",
+      }}
+    />
+    <div className="relative flex items-center space-x-1.5 cursor-pointer">
+      <Brush size={16} className="group-hover:rotate-12 transition-transform duration-300" />
+      <span className="font-body">Enroll Now</span>
+      <Sparkles size={14} className="group-hover:scale-125 transition-transform duration-300" />
+    </div>
+  </motion.button>
 
             {/* Mobile Menu Button */}
             <motion.button
