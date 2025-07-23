@@ -274,8 +274,8 @@ const GalleryPage = () => {
                   onClick={() => setSelectedCategory(category.name)}
                   className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-xl md:rounded-2xl font-body font-semibold text-xs sm:text-sm md:text-base transition-all whitespace-nowrap ${
                     selectedCategory === category.name
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg transform scale-105'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+                      ? 'bg-blue-800 text-white shadow-md scale-105'
+                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200 hover:scale-105'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
