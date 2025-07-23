@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // MongoDB Atlas connection URI
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://sanket27:sanket1234@cluster0.xuf2s.mongodb.net/kalakar_art_academy?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Middleware
 app.use(cors());
