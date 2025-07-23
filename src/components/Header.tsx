@@ -173,13 +173,13 @@ const Header = () => {
                 src="/logo.png"
                 alt="Kalakar Art Academy"
                 className="
-                  h-10 w-auto
-                  xs:h-12 
-                  sm:h-14 
-                  md:h-16 
-                  lg:h-20 
-                  xl:h-24 
-                  2xl:h-28
+                   h-10 w-auto
+                    xs:h-12 
+                    sm:h-14 
+                    md:h-16 
+                    lg:h-20 
+                    xl:h-24 
+                    2xl:h-28
                   object-contain 
                   transition-all duration-300
                   hover:opacity-90
