@@ -108,16 +108,16 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #e0f2fe; /* Light blue (like tailwind's blue-100) */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #9333ea, #ec4899);
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a); /* from-blue-500 to-blue-900 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #7c3aed, #db2777);
+  background: linear-gradient(135deg, #2563eb, #1e40af); /* from-blue-600 to-blue-950 */
 }
 
 /* Mobile First Responsive Font Sizes */
