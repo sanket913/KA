@@ -164,7 +164,7 @@ const Header = () => {
             
             {/* Logo */}
             <motion.div 
-              className="cursor-pointer"
+              className="cursor-pointer pt-8"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleLogoClick}
@@ -173,18 +173,18 @@ const Header = () => {
                 src="/logo.png"
                 alt="Kalakar Art Academy"
                 className="
-                  h-8 w-auto
-                  xs:h-9
-                  sm:h-10 
-                  md:h-12 
-                  lg:h-14 
-                  xl:h-16 
-                  2xl:h-18
+                  h-10 w-auto
+                  xs:h-12 
+                  sm:h-14 
+                  md:h-16 
+                  lg:h-20 
+                  xl:h-24 
+                  2xl:h-28
                   object-contain 
                   transition-all duration-300
                   hover:opacity-90
                   max-w-none
-                "
+                  "
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
