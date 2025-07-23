@@ -13,21 +13,21 @@ const Courses = () => {
       name: 'Kids',
       ageRange: '5-12 years',
       icon: Heart,
-      color: 'from-green-400 to-blue-500',
+      color: 'from-[#E0F2FE] to-[#3B82F6]',
       description: 'Fun and creative art exploration for young minds'
     },
     {
       name: 'Teens',
       ageRange: '13-17 years',
       icon: Star,
-      color: 'from-purple-400 to-pink-500',
+      color: 'from-[#CFFAFE] to-[#06B6D4]',
       description: 'Skill development and artistic expression for teenagers'
     },
     {
       name: 'Adults',
       ageRange: '18+ years',
       icon: Award,
-      color: 'from-orange-400 to-red-500',
+      color: 'from-[#DBEAFE] to-[#1E3A8A]',
       description: 'Professional art training and personal enrichment'
     }
   ];
@@ -49,7 +49,7 @@ const Courses = () => {
           'Progress certificate',
           'Parent showcase event'
         ],
-        color: 'from-green-400 to-blue-500',
+        color: 'from-[#E0F2FE] to-[#60A5FA]',
         image: 'https://images.pexels.com/photos/1047540/pexels-photo-1047540.jpeg',
         highlights: ['Fun & Play-based', 'Safe Materials', 'Small Groups'],
         technique: 'Mixed Media'
@@ -69,7 +69,7 @@ const Courses = () => {
           'Individual portfolio',
           'Monthly progress review'
         ],
-        color: 'from-cyan-400 to-teal-500',
+        color: 'from-[#BAE6FD] to-[#2563EB]',
         image: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg',
         highlights: ['Structured Learning', 'Portfolio Building', 'Creative Growth'],
         technique: 'Watercolor & Clay'
@@ -89,7 +89,7 @@ const Courses = () => {
           'Exhibition participation',
           'Achievement certificate'
         ],
-        color: 'from-indigo-400 to-purple-500',
+        color: 'from-[#DBEAFE] to-[#3B82F6]',
         image: 'https://images.pexels.com/photos/1047540/pexels-photo-1047540.jpeg',
         highlights: ['Advanced Skills', 'Art History', 'Exhibition Ready'],
         technique: 'Mixed Media'
@@ -111,7 +111,7 @@ const Courses = () => {
           'Sketchbook included',
           'Peer feedback sessions'
         ],
-        color: 'from-purple-400 to-pink-500',
+        color: 'from-[#A5F3FC] to-[#0891B2]',
         image: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg',
         highlights: ['Skill Building', 'Confidence Boost', 'Peer Learning'],
         technique: 'Pencil & Charcoal'
@@ -131,7 +131,7 @@ const Courses = () => {
           'Personal projects',
           'Technique workshops'
         ],
-        color: 'from-pink-400 to-rose-500',
+        color: 'from-[#CFFAFE] to-[#0EA5E9]',
         image: 'https://images.pexels.com/photos/1047540/pexels-photo-1047540.jpeg',
         highlights: ['Style Development', 'Personal Voice', 'Advanced Skills'],
         technique: 'Acrylic & Oil'
@@ -151,7 +151,7 @@ const Courses = () => {
           'Professional presentation',
           'Career counseling'
         ],
-        color: 'from-violet-400 to-purple-600',
+        color: 'from-[#E0F2FE] to-[#0284C7]',
         image: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg',
         highlights: ['College Ready', 'Portfolio Focus', 'Career Guidance'],
         technique: 'Professional Media'
@@ -173,7 +173,7 @@ const Courses = () => {
           'Flexible scheduling',
           'Adult learning methods'
         ],
-        color: 'from-orange-400 to-red-500',
+        color: 'from-[#BFDBFE] to-[#1E40AF]',
         image: 'https://images.pexels.com/photos/1047540/pexels-photo-1047540.jpeg',
         highlights: ['Beginner Friendly', 'Stress Relief', 'Flexible Schedule'],
         technique: 'Watercolor & Pencil'
@@ -193,7 +193,7 @@ const Courses = () => {
           'Technical skill focus',
           'Individual guidance'
         ],
-        color: 'from-red-400 to-pink-500',
+        color: 'from-[#DBEAFE] to-[#1D4ED8]',
         image: 'https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg',
         highlights: ['Technical Skills', 'Multiple Mediums', 'Personal Growth'],
         technique: 'Oil & Acrylic'
@@ -213,7 +213,7 @@ const Courses = () => {
           'Exhibition preparation',
           'Networking opportunities'
         ],
-        color: 'from-amber-400 to-orange-600',
+        color: 'from-[#93C5FD] to-[#1E3A8A]',
         image: 'https://images.pexels.com/photos/1047540/pexels-photo-1047540.jpeg',
         highlights: ['Professional Level', 'Business Skills', 'Exhibition Ready'],
         technique: 'Professional Media'
@@ -380,7 +380,7 @@ const Courses = () => {
                 <div className="p-4 xs:p-5 sm:p-6 md:p-8">
                   {/* Hindi Name Display in Content */}
                   <div className="text-center mb-3 xs:mb-4">
-                    <div className={`inline-flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r ${course.color} rounded-full text-white text-xs xs:text-sm font-semibold`}>
+                    <div className={`inline-flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 rounded-full text-white text-xs xs:text-sm font-semibold`}>
                       <Brush size={14} className="xs:w-4 xs:h-4" />
                       <span className="font-script">{course.hindiName}</span>
                     </div>
@@ -418,7 +418,7 @@ const Courses = () => {
                       {course.highlights.map((highlight, idx) => (
                         <span
                           key={idx}
-                          className={`px-2 xs:px-3 py-1 bg-gradient-to-r ${course.color} text-white rounded-full text-xs xs:text-sm font-medium`}
+                          className={`px-2 xs:px-3 py-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white rounded-full text-xs xs:text-sm font-medium`}
                         >
                           {highlight}
                         </span>
@@ -446,7 +446,7 @@ const Courses = () => {
                   {/* Enroll Button */}
                   <motion.button
                     onClick={() => handleEnrollClick(course)}
-                    className={`w-full bg-gradient-to-r ${course.color} text-white py-2.5 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl font-semibold flex items-center justify-center gap-1.5 xs:gap-2 hover:shadow-lg transition-all text-xs xs:text-sm sm:text-base md:text-lg group`}
+                    className={`w-full bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white py-2.5 xs:py-3 sm:py-4 rounded-xl xs:rounded-2xl font-semibold flex items-center justify-center gap-1.5 xs:gap-2 hover:shadow-lg transition-all text-xs xs:text-sm sm:text-base md:text-lg group`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
