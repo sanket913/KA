@@ -10,10 +10,9 @@ export interface ContactFormData {
 }
 
 // API base URL - replace with your actual backend URL
-const API_BASE_URL =
-  window.location.hostname === 'your-production-domain.com'
-    ? 'https://ka-1-bdzy.onrender.com' // Replace with your actual API URL
-    : 'http://localhost:3001'; // Local development
+const API_BASE_URL = (import.meta.env.MODE === 'production')
+  ? 'https://ka-1-bdzy.onrender.com' // Replace with your actual API URL
+  : 'http://localhost:3001'; // Local development
 
 export const saveContactFormToDatabase = async (contactData: Omit<ContactFormData, 'submittedAt' | 'status'>): Promise<{ success: boolean; message: string; contactId?: string }> => {
   try {
