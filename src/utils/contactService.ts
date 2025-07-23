@@ -12,7 +12,7 @@ export interface ContactFormData {
 // API base URL - replace with your actual backend URL
 const API_BASE_URL =
   window.location.hostname === 'your-production-domain.com'
-    ? 'https://your-backend-api.vercel.app' // Replace with your actual API URL
+    ? 'https://ka-290t.onrender.com' // Replace with your actual API URL
     : 'http://localhost:3001'; // Local development
 
 export const saveContactFormToDatabase = async (contactData: Omit<ContactFormData, 'submittedAt' | 'status'>): Promise<{ success: boolean; message: string; contactId?: string }> => {

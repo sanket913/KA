@@ -55,7 +55,7 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 xs:p-5 sm:p-6 md:p-8 rounded-2xl xs:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-blue-800 to-blue-900 p-4 xs:p-5 sm:p-6 md:p-8 rounded-2xl xs:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300"
               whileHover={{ y: -5 }}
             >
               <div className="flex items-center mb-3 xs:mb-4 sm:mb-6">
@@ -67,7 +67,7 @@ const Testimonials = () => {
                 </div>
               </div>
 
-              <p className="font-serif text-xs xs:text-sm sm:text-base md:text-lg text-gray-700 mb-3 xs:mb-4 sm:mb-6 leading-relaxed italic">
+              <p className="font-serif text-xs xs:text-sm sm:text-base md:text-lg  text-white mb-3 xs:mb-4 sm:mb-6 leading-relaxed italic">
                 "{testimonial.content}"
               </p>
 
@@ -90,8 +90,8 @@ const Testimonials = () => {
                   />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-gray-800 text-xs xs:text-sm sm:text-base md:text-lg">{testimonial.name}</h4>
-                  <p className="font-body text-purple-600 text-xs sm:text-sm md:text-base">{testimonial.role}</p>
+                  <h4 className="font-display font-bold text-white text-xs xs:text-sm sm:text-base md:text-lg">{testimonial.name}</h4>
+                  <p className="font-body text-sky-300 text-xs sm:text-sm md:text-base">{testimonial.role}</p>
                 </div>
               </div>
             </motion.div>

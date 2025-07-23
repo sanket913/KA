@@ -1,18 +1,20 @@
 
 import { motion } from 'framer-motion';
-import { ArrowRight,  Sparkles, Brush } from 'lucide-react';
+import { ArrowRight,  Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-12 xs:pt-14 sm:pt-16 md:pt-18 lg:pt-20 xl:pt-22">
+    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-24 xs:pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44
+">
       {/* Crystal Clear Background - No Blur */}
       <div className="absolute inset-0">
         {/* Background Image - Crystal Clear */}
         <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent sm:bg-none z-10"></div>
           <img
             src="/1.png"
             alt="Art studio background"
-            className="w-full h-full object-fill"
+            className="w-full h-full object-cover object-[center_20%] sm:object-center"
             onError={(e) => {
               // Fallback to gradient if image fails to load
               const target = e.target as HTMLImageElement;
@@ -24,10 +26,7 @@ const Hero = () => {
             }}
           />
         </div>
-        {/* Enhanced overlays for better text readability - Reduced opacity to keep image clear */}
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-purple-800/15 to-pink-900/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
+       
       </div>
 
       {/* Animated background particles */}
@@ -110,35 +109,6 @@ const Hero = () => {
 
       {/* Creative floating icons - Reduced and repositioned */}
       <div className="absolute inset-0 hidden lg:block">
-        <motion.div
-          className="absolute top-[15%] left-[12%] z-20"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: [0, 0.7, 0.4, 0.7],
-            scale: [0, 1.2, 0.8, 1],
-            rotate: [0, 360],
-          }}
-          transition={{
-            duration: 5,
-            delay: 0.8,
-            repeat: Infinity,
-            repeatDelay: 4,
-            ease: "easeInOut",
-          }}
-          whileHover={{
-            scale: 1.4,
-            rotate: 180,
-            transition: { duration: 0.3 }
-          }}
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/20 rounded-full blur-md"></div>
-            <Brush 
-              size={28} 
-              className="relative text-yellow-400 drop-shadow-2xl lg:w-8 lg:h-8 xl:w-10 xl:h-10" 
-            />
-          </div>
-        </motion.div>
 
         <motion.div
           className="absolute bottom-[25%] left-[15%] z-20"
@@ -172,7 +142,7 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-30 container mx-auto px-3 xs:px-4 sm:px-6 md:px-8 lg:px-12 py-4 xs:py-6 sm:py-8 md:py-12 lg:py-16">
+      <div className="relative z-30 container mx-auto px-4 xs:px-4 sm:px-6 md:px-8 lg:px-12 py-4 xs:py-6 sm:py-8 md:py-12 lg:py-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -186,181 +156,109 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="flex justify-center lg:justify-start mb-3 xs:mb-4 sm:mb-6 md:mb-8"
+              className="flex justify-center lg:justify-start mb-4 sm:mb-6 md:mb-8"
             >
-              <div className="flex items-center gap-2 xs:gap-3 sm:gap-4 bg-white/10 backdrop-blur-md rounded-full px-3 xs:px-4 sm:px-6 md:px-8 py-1.5 xs:py-2 sm:py-3 md:py-4 border border-white/20">
-                <Sparkles className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-yellow-400" />
-                <span className="font-script text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl font-medium">
+              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 bg-white/10 backdrop-blur-md rounded-full px-3 sm:px-5 md:px-7 py-1.5 sm:py-2.5 md:py-3 border border-white/20 shadow-md">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#1e3a8a]" />
+                <span className="font-script text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium">
                   Welcome to Creativity
                 </span>
-                <Sparkles className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-pink-400" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#1e3a8a]" />
               </div>
             </motion.div>
 
+
             {/* Hindi tagline */}
-            <motion.h2
+           <motion.h2
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="font-script text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl text-yellow-300 font-medium mb-1.5 xs:mb-2 sm:mb-3 md:mb-4 lg:mb-6 drop-shadow-2xl text-shadow-lg"
+              className="font-script text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-center sm:text-left mb-3 sm:mb-4 md:mb-5 lg:mb-6 px-4 sm:px-0 leading-snug"
               style={{
-                textShadow: '0 0 20px rgba(253, 224, 71, 0.5), 0 0 40px rgba(253, 224, 71, 0.3), 0 4px 8px rgba(0, 0, 0, 0.8)'
+                textShadow: `
+                  1px 1px 3px rgba(0, 0, 0, 0.3),
+                  0 0 8px rgba(0, 0, 0, 0.15)
+                `
               }}
             >
               हर घर में छुपा है
             </motion.h2>
+
+
+
+
+
+
             
             {/* Main heading */}
             <motion.h1
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 xs:mb-4 sm:mb-6 md:mb-8 lg:mb-10 leading-tight tracking-tight drop-shadow-2xl text-shadow-xl"
-              
+              className="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white mb-4 xs:mb-5 sm:mb-6 md:mb-8 lg:mb-10 leading-tight tracking-tight text-center sm:text-left px-2 sm:px-0 drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
             >
               एक{' '}
               <span className="relative inline-block">
-                <span className=" font-script italic">
+                <span
+                  className="font-script italic text-white drop-shadow-[0_2px_4px_rgba(30,58,138,0.6)]"
+                >
                   कलाकार
                 </span>
               </span>
             </motion.h1>
 
-            {/* Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-              className="font-serif text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-100 mb-4 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12 leading-relaxed max-w-2xl lg:max-w-3xl font-light drop-shadow-2xl text-shadow"
-              style={{
-                textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6)'
-              }}
-            >
-              At{' '}
-              <span 
-                className="font-script text-yellow-300 font-semibold text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
-                style={{
-                  textShadow: '0 0 15px rgba(253, 224, 71, 0.6), 0 2px 4px rgba(0, 0, 0, 0.8)'
-                }}
-              >
-                Kalakar Art Academy ,
-              </span>
-              <br className="hidden sm:block" />
-              Discover the world of{' '}
-              <span 
-                className="text-yellow-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(253, 224, 71, 0.5)' }}
-              >
-                Sketching
-              </span>,{' '}
-              <span 
-                className="text-pink-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(249, 168, 212, 0.5)' }}
-              >
-                Drawing
-              </span>, and{' '}
-              <span 
-                className="text-blue-300 font-semibold font-display"
-                style={{ textShadow: '0 0 10px rgba(147, 197, 253, 0.5)' }}
-              >
-                Painting
-              </span>
-            </motion.p>
+
+
+           <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="font-serif text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-100 mb-4 xs:mb-6 sm:mb-8 md:mb-10 lg:mb-12 leading-relaxed max-w-2xl lg:max-w-3xl font-light drop-shadow-lg text-center sm:text-left px-3 sm:px-0"
+            style={{
+              textShadow: `
+                0 2px 8px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(0, 0, 0, 0.6)
+              `
+            }}
+          >
+            At <span className="text-white font-semibold">Kalakar Art Academy</span>,<br className="hidden sm:block" />
+            discover the world of <span className="italic text-white">Sketching</span>,{' '}
+            <span className="italic text-white">Drawing</span>, and{' '}
+            <span className="italic text-white">Painting</span>.
+          </motion.p>
+
 
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center sm:items-start mb-6 xs:mb-8 sm:mb-12 md:mb-16 lg:mb-20"
+              className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 md:gap-6 justify-center lg:justify-start items-center sm:items-start mb-2 xs:mb-4 sm:mb-6 md:mb-8 lg:mb-10"
             >
               <motion.button
-                className="group relative w-full sm:w-auto bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 py-2.5 xs:py-3 sm:py-4 md:py-5 rounded-full font-semibold text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 hover:shadow-2xl transition-all duration-300 font-body overflow-hidden backdrop-blur-sm border border-white/20"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                style={{
-                  boxShadow: '0 0 30px rgba(147, 51, 234, 0.4), 0 8px 32px rgba(0, 0, 0, 0.3)'
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-                <span className="relative z-10">Explore Courses</span>
-                <ArrowRight size={14} className="relative z-10 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              className="group relative w-auto sm:w-auto bg-gradient-to-r from-[#1e3a8a] via-[#1e40af] to-[#1e429f] text-white 
+                  px-4 xs:px-5 sm:px-6 md:px-8 lg:px-10 
+                  py-2 xs:py-2.5 sm:py-3 md:py-4 
+                  rounded-full font-semibold 
+                  text-sm xs:text-sm sm:text-base md:text-lg 
+                  flex items-center justify-center gap-1.5 xs:gap-2 sm:gap-3 
+                  hover:shadow-xl transition-all duration-300 font-body 
+                  overflow-hidden backdrop-blur-md border border-white/20"
+                  onClick={() => {
+                    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1e40af] via-[#1e3a8a] to-[#1e429f] opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+              <span className="relative z-10">Explore Courses</span>
+              <ArrowRight
+                size={16}
+                className="relative z-10 xs:w-4 xs:h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform"
+              />
+            </motion.button>
+
+
               
             </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Art categories with enhanced design - Left aligned with content */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="max-w-7xl mx-auto"
-        >
-          {/* Left aligned with main content */}
-          <div className="max-w-2xl lg:max-w-3xl mx-auto lg:mx-0">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-4 md:gap-5 text-center">
-              {[
-                { 
-                  name: 'Painting', 
-                  color: 'from-red-500 via-orange-500 to-yellow-500', 
-                  desc: 'Colors & Canvas',
-                  icon: '🎨'
-                },
-                { 
-                  name: 'Sketching', 
-                  color: 'from-blue-500 via-purple-500 to-indigo-500', 
-                  desc: 'Lines & Forms',
-                  icon: '✏️'
-                },
-                { 
-                  name: 'Drawing', 
-                  color: 'from-green-500 via-teal-500 to-cyan-500', 
-                  desc: 'Precision & Detail',
-                  icon: '🖊️'
-                },
-                { 
-                  name: 'Creative Workshop', 
-                  color: 'from-pink-500 via-purple-500 to-violet-500', 
-                  desc: 'Mixed Media Art',
-                  icon: '🎭'
-                },
-              ].map((category, index) => (
-                <motion.div
-                  key={category.name}
-                  className={`group relative bg-gradient-to-br ${category.color} p-2 xs:p-3 sm:p-4 md:p-5 lg:p-6 rounded-lg xs:rounded-xl sm:rounded-2xl text-white text-center backdrop-blur-md border border-white/30 overflow-hidden shadow-2xl`}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  transition={{ delay: index * 0.1, duration: 0.3 }}
-                  style={{
-                    boxShadow: '0 0 40px rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.4)'
-                  }}
-                >
-                  <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm"></div>
-                  <div className="relative z-10">
-                    <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-1 xs:mb-1.5 sm:mb-2 md:mb-3">
-                      {category.icon}
-                    </div>
-                    <h3 
-                      className="font-display text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold mb-0.5 xs:mb-1 sm:mb-1.5"
-                      style={{
-                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.2)'
-                      }}
-                    >
-                      {category.name}
-                    </h3>
-                    <p 
-                      className="font-serif text-xs sm:text-sm md:text-base opacity-90 font-light italic"
-                      style={{
-                        textShadow: '0 1px 4px rgba(0, 0, 0, 0.5)'
-                      }}
-                    >
-                      {category.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

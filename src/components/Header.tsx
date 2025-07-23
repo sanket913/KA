@@ -54,35 +54,35 @@ const Header = () => {
       name: 'Home', 
       href: '#home',
       icon: Home,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Welcome to creativity'
     },
     { 
       name: 'About', 
       href: '#about',
       icon: Users,
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Our artistic journey'
     },
     { 
       name: 'Courses', 
       href: '#courses',
       icon: Award,
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Learn & create'
     },
     { 
       name: 'Gallery', 
       href: '#gallery',
       icon: Palette,
-      color: 'from-orange-500 to-red-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Student masterpieces'
     },
     { 
       name: 'Contact', 
       href: '#contact',
       icon: Phone,
-      color: 'from-indigo-500 to-purple-500',
+      color: 'from-[#1e3a8a] via-[#1e40af] to-[#1e429f]',
       description: 'Get in touch'
     },
   ];
@@ -156,18 +156,15 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-purple-100' 
-            : 'bg-white/90 backdrop-blur-lg shadow-md'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent`}
       >
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-22">
+          <div className="relative flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-22">
+
             
             {/* Logo */}
             <motion.div 
-              className="cursor-pointer"
+              className="cursor-pointer pt-8"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleLogoClick}
@@ -176,18 +173,18 @@ const Header = () => {
                 src="/logo.png"
                 alt="Kalakar Art Academy"
                 className="
-                  h-8 w-auto
-                  xs:h-9
-                  sm:h-10 
-                  md:h-12 
-                  lg:h-14 
-                  xl:h-16 
-                  2xl:h-18
+                   h-10 w-auto
+                    xs:h-12 
+                    sm:h-14 
+                    md:h-16 
+                    lg:h-20 
+                    xl:h-24 
+                    2xl:h-28
                   object-contain 
                   transition-all duration-300
                   hover:opacity-90
                   max-w-none
-                "
+                  "
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
@@ -227,7 +224,7 @@ const Header = () => {
             </motion.div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 absolute left-1/2 transform -translate-x-1/2">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -238,7 +235,7 @@ const Header = () => {
                 >
                   <motion.button
                     onClick={() => handleNavClick(item.href, item.name)}
-                    className="relative px-3 xl:px-4 py-2 xl:py-2.5 rounded-xl font-body font-medium text-sm xl:text-base text-gray-700 hover:text-white transition-all duration-300 overflow-hidden group cursor-pointer"
+                    className="relative px-3 xl:px-4 py-2 xl:py-2.5 rounded-xl font-body font-medium text-sm xl:text-base text-white hover:text-white transition-all duration-300 overflow-hidden group cursor-pointer"
                     whileHover={{ scale: 1.05, y: -1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -266,43 +263,40 @@ const Header = () => {
                   </motion.button>
                 </motion.div>
               ))}
-              
-              {/* CTA Button */}
-              <motion.button
-                onClick={handleEnrollClick}
-                className="relative ml-2 xl:ml-4 px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500
- text-white font-semibold text-sm xl:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                whileHover={{ scale: 1.05, y: -1 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                {/* Animated shine effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                  animate={{
-                    x: ['-100%', '100%'],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 3,
-                    ease: "easeInOut",
-                  }}
-                />
-                
-                <div className="relative flex items-center space-x-1.5 cursor-pointer">
-                  <Brush size={16} className="group-hover:rotate-12 transition-transform duration-300" />
-                  <span className="font-body">Enroll Now</span>
-                  <Sparkles size={14} className="group-hover:scale-125 transition-transform duration-300" />
-                </div>
-              </motion.button>
+          
             </nav>
+            <motion.button
+    onClick={handleEnrollClick}
+    className="hidden lg:flex ml-auto px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500
+    text-white font-semibold text-sm xl:text-base rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+    whileHover={{ scale: 1.05, y: -1 }}
+    whileTap={{ scale: 0.95 }}
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ delay: 0.6 }}
+  >
+    <motion.div
+      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+      animate={{
+        x: ['-100%', '100%'],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        repeatDelay: 3,
+        ease: "easeInOut",
+      }}
+    />
+    <div className="relative flex items-center space-x-1.5 cursor-pointer">
+      <Brush size={16} className="group-hover:rotate-12 transition-transform duration-300" />
+      <span className="font-body">Enroll Now</span>
+      <Sparkles size={14} className="group-hover:scale-125 transition-transform duration-300" />
+    </div>
+  </motion.button>
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden relative p-2 sm:p-2.5 rounded-xl bg-gradient-to-r from-purple-100 to-pink-100 hover:from-purple-200 hover:to-pink-200 transition-all duration-300 cursor-pointer"
+              className="lg:hidden relative p-2 sm:p-2.5 rounded-xl bg-transparent hover:bg-white/10 transition-all duration-300 cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -316,7 +310,7 @@ const Header = () => {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X size={20} className="text-purple-600" />
+                    <X size={20} className="text-white" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -326,7 +320,7 @@ const Header = () => {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu size={20} className="text-purple-600" />
+                    <Menu size={20} className="text-white" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -350,7 +344,7 @@ const Header = () => {
             
             {/* Mobile Menu */}
             <motion.div
-              className="fixed top-16 sm:top-18 md:top-20 lg:top-22 left-3 right-3 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-purple-100 z-50 lg:hidden overflow-hidden"
+              className="fixed top-16 sm:top-18 md:top-20 lg:top-22 left-3 right-3 sm:left-4 sm:right-4 bg-white/95 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl z-50 lg:hidden overflow-hidden"
               initial={{ opacity: 0, y: -30, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -30, scale: 0.95 }}

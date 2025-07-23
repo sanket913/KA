@@ -296,7 +296,7 @@ const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2.5 xs:py-3 sm:py-4 rounded-lg xs:rounded-xl font-semibold hover:shadow-lg transition-all text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white py-2.5 xs:py-3 sm:py-4 rounded-lg xs:rounded-xl font-semibold hover:shadow-lg transition-all text-xs xs:text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
@@ -327,7 +327,7 @@ const Contact = () => {
               <h3 className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-3 xs:mb-4 sm:mb-6">Contact Information</h3>
               <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg xs:rounded-xl flex items-center justify-center">
+                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 via-indigo-500 to-violet-500 rounded-lg xs:rounded-xl flex items-center justify-center">
                     <Phone size={16} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
@@ -336,7 +336,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg xs:rounded-xl flex items-center justify-center">
+                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 via-indigo-500 to-violet-500 rounded-lg xs:rounded-xl flex items-center justify-center">
                     <Mail size={16} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
@@ -345,7 +345,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-2 xs:gap-3 sm:gap-4">
-                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg xs:rounded-xl flex items-center justify-center">
+                  <div className="w-8 h-8 xs:w-10 xs:h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-600 via-indigo-500 to-violet-500 rounded-lg xs:rounded-xl flex items-center justify-center">
                     <MapPin size={16} className="xs:w-5 xs:h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>

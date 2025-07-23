@@ -240,6 +240,24 @@ const GalleryPage = () => {
         {/* Category Filter */}
         <div className="bg-white py-6 md:py-8 border-b border-gray-200">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-start mb-4">
+              <button
+                onClick={() => window.location.href = '/'}
+                className="flex items-center text-sm sm:text-base text-purple-600 hover:text-purple-800 transition font-medium"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 sm:h-5 sm:w-5 mr-1.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+              </button>
+            </div>
             <div className="text-center mb-6 md:mb-8">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-800 mb-3 md:mb-4">
                 Browse by Category
@@ -256,8 +274,8 @@ const GalleryPage = () => {
                   onClick={() => setSelectedCategory(category.name)}
                   className={`px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 rounded-xl md:rounded-2xl font-body font-semibold text-xs sm:text-sm md:text-base transition-all whitespace-nowrap ${
                     selectedCategory === category.name
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg transform scale-105'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+                      ? 'bg-blue-800 text-white shadow-md scale-105'
+                      : 'bg-blue-100 text-blue-800 hover:bg-blue-200 hover:scale-105'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

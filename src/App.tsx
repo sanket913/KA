@@ -68,15 +68,17 @@ function App() {
     );
   }
 
-  return (
-    <div className="min-h-screen" data-page="home">
+   return (
+    <div className="min-h-screen bg-white overflow-x-hidden max-w-full">
       <Header />
-      <Hero />
-      <About />
-      <Courses />
-      <Gallery onNavigateToGallery={() => setCurrentPage('gallery')} />
-      <Testimonials />
-      <Contact />
+      <main className="overflow-x-hidden max-w-full">
+        <Hero />
+        <About />
+        <Courses />
+        <Gallery onNavigateToGallery={() => setCurrentPage('gallery')} />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

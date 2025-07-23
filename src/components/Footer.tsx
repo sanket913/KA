@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { 
   Palette, 
@@ -86,10 +86,6 @@ const Footer = () => {
     { day: 'Sunday', time: 'Closed' },
   ];
 
-  const handleLogoClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleNavClick = (href: string) => {
     // Check if we're on gallery page
     const isGalleryPage = document.querySelector('[data-page="gallery"]');
@@ -171,121 +167,14 @@ const Footer = () => {
             viewport={{ once: true }}
             className="text-center mb-12 md:mb-16 lg:mb-20"
           >
-            {/* Logo Section */}
-            <div className="flex justify-center items-center mb-6 md:mb-8">
-              <motion.div 
-                className="relative cursor-pointer"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                onClick={handleLogoClick}
-              >
-                {/* Main Logo Image */}
-                <img
-                  src="/logo.png"
-                  alt="Kalakar Art Academy"
-                  className="
-                    h-12 w-auto
-                    xs:h-14
-                    sm:h-16 
-                    md:h-20 
-                    lg:h-24 
-                    xl:h-28 
-                    2xl:h-32
-                    object-contain 
-                    transition-all duration-300
-                    hover:opacity-90
-                    max-w-none
-                    drop-shadow-2xl
-                  "
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'flex';
-                  }}
-                />
-                
-                {/* Fallback Logo */}
-                <div 
-                  className="
-                    h-12 w-12
-                    xs:h-14 xs:w-14
-                    sm:h-16 sm:w-16
-                    md:h-20 md:w-20
-                    lg:h-24 lg:w-24
-                    xl:h-28 xl:w-28
-                    2xl:h-32 2xl:w-32
-                    bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 
-                    rounded-3xl
-                    flex items-center justify-center 
-                    cursor-pointer
-                    shadow-2xl
-                  "
-                  style={{ display: 'none' }}
-                >
-                  <Palette className="
-                    w-6 h-6 
-                    xs:w-7 xs:h-7 
-                    sm:w-8 sm:h-8 
-                    md:w-10 md:h-10 
-                    lg:w-12 lg:h-12 
-                    xl:w-14 xl:h-14 
-                    2xl:w-16 2xl:h-16
-                    text-white
-                  " />
-                </div>
-                
-                {/* Floating sparkles around logo */}
-                <motion.div
-                  className="absolute -top-2 -right-2 w-4 h-4 md:w-5 md:h-5 bg-yellow-400 rounded-full flex items-center justify-center"
-                  animate={{
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 180, 360],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Sparkles className="w-2 h-2 md:w-3 md:h-3 text-white" />
-                </motion.div>
-                
-                <motion.div
-                  className="absolute -bottom-1 -left-2 w-3 h-3 md:w-4 md:h-4 bg-cyan-400 rounded-full"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.7, 1, 0.7],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1,
-                  }}
-                />
-              </motion.div>
-            </div>
-
-            {/* Academy Name and Tagline */}
-            <div className="mb-6 md:mb-8">
-              <p className="font-script text-lg md:text-xl lg:text-2xl text-yellow-300 font-medium mb-4 md:mb-6">
-                हर घर में छुपा है एक कलाकार
-              </p>
-              
-              <p className="font-serif text-gray-300 text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8 px-4">
-                Unleash your creative potential and discover the artist within at Gujarat's premier art education center.
-              </p>
-            </div>
-
             {/* CTA Button */}
             <motion.button
-              className="group relative bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              className="group relative bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleStartJourneyClick}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative flex items-center space-x-2">
                 <Brush className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="font-body">Start Your Artistic Journey</span>
